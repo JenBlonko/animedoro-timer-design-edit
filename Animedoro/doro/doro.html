@@ -23,27 +23,27 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&lt;</a>
                 <a href="../index.html">
                     <button class="button-black" type="button" onclick="">
-                        <h2>HOME</h2>
+                        <h2>PÁGINA PRINCIPAL</h2>
                     </button>
                 </a>
                 <a href="./doro.html">
                     <button class="button-black" type="button" onclick="">
-                        <h2>TIMER</h2>
+                        <h2>TEMPORIZADOR</h2>
                     </button>
                 </a>
 
 
                 <details open>
                     <summary style="cursor:pointer">
-                        Vibing Material
+                        Música
                     </summary>
                     <details>
-                        <summary style="cursor: pointer;">Anime Music</summary>
+                        <summary style="cursor: pointer;">Ánime</summary>
                         <iframe src="https://open.spotify.com/embed/playlist/2hmggPfWXyCOmUtmWzKItS" width="220"
                             height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </details>
                     <details>
-                        <summary style="cursor: pointer;">Anime LOFI</summary>
+                        <summary style="cursor: pointer;">Ánime LOFI</summary>
                         <iframe src="https://open.spotify.com/embed/playlist/0aQltjGqAFjNTVNGjoELKq" width="220"
                             height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </details>
@@ -53,7 +53,7 @@
                             height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </details>
                     <details>
-                        <summary style="cursor: pointer;">Retro Game Tunes</summary>
+                        <summary style="cursor: pointer;">Juegos Retro</summary>
                         <iframe src="https://open.spotify.com/embed/playlist/3lc6yNcs0dN6Z8czsrpSZj" width="220"
                             height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </details>
@@ -68,19 +68,19 @@
                         Tunes</a><br>-->
                 </details>
                 <details>
-                    <summary style="cursor:pointer">How it works?</summary>
+                    <summary style="cursor:pointer">Cómo usar AnimeDoro</summary>
                     <center>
-                        You can set work and anime time<br>
-                        A timer starts and it notifies you when the time is over <br>
-                        You can add extra 5 minutes whenever you want <br>
-                        After the work time, you are free to watch anime<br>
-                        It notifies you again after set time to stop watching <br>
-                        You can start time timer again if you wish to continue studying or working
+                        Puedes cambiar los tiempos <br>
+                        El temporizador comienza y te notifica al terminar <br>
+                        Puedes agregar 5 minutos si quieres <br>
+                        Luego de trabajar, puedes ver un episodio de Ánime <br>
+                        Luego de 20 min te notifica una vez más <br>
+                        Si deseas continuar el ciclo puedes comenzar de nuevo!
                     </center>
                 </details>
                 <a href="https://github.com/ankushKun/animedoro-timer" target="_blank">
                     <button class="button-black" type="button" onclick="">
-                        <p style="font-size: 15px;">GITHUB REPO</p>
+                        <p style="font-size: 15px;">REPO DE GITHUB</p>
                     </button>
                 </a>
                 <a href="https://ankushKun.github.io/">
@@ -96,8 +96,8 @@
         <main>
             <div class="counter">‍‍
                 <span class="before-start">
-                    Work Minutes : <input type="number" id="work-input" class="before-start" onchange="inpchk(workInp)"  oninput="inpvalid(workInp)"><br>
-                    Anime Minutes : <input type="number" id="anime-input" class="before-start" onchange="inpchk(aniInp)"  oninput="inpvalid(aniInp)">
+                    Tiempo de Estudio : <input type="number" id="work-input" class="before-start" onchange="inpchk(workInp)"  oninput="inpvalid(workInp)"><br>
+                    Tiempo de Entretenimiento : <input type="number" id="anime-input" class="before-start" onchange="inpchk(aniInp)"  oninput="inpvalid(aniInp)">
                 </span>
                 <span class="aft-start">
                     <span class="minutes">40</span>
@@ -116,13 +116,13 @@
             <h4 class="total-count-anime">0 Hours of Anime</h4>
             <br>
             <button class="button-black" id="reset-button" type="button" onclick="reset()">
-                <h4>RESET</h4>
+                <h4>REINICIAR</h4>
             </button>
             <button class="button-black" id="start-button" type="button" onclick="startClicked()">
-                <h2>START</h2>
+                <h2>EMPEZAR</h2>
             </button>
             <button class="button-black" id="finish-button" type="button" onclick="finishCountdown()">
-                <h2>FINISH</h2>
+                <h2>FINALIZAR</h2>
             </button>
             <button class="button-black" id="plus5" type="button" onclick="add5mins()">
                 <h2>+5</h2>

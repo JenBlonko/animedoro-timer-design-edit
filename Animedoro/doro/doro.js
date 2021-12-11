@@ -23,10 +23,10 @@ const studyHoursCounter = document.querySelector(".total-count-study");
 
 const beep = document.querySelector("#notificationSound");
 
-startButton.textContent = "START";
+startButton.textContent = "COMENZAR";
 resetButton.style.visibility = "hidden";
 finishButton.style.visibility = "hidden";
-finishButton.textContent = "FINISH";
+finishButton.textContent = "FINALIZAR";
 plus5.textContent = "+5";
 plus5.style.visibility = "hidden";
 pause.style.visibility = "hidden";
@@ -63,17 +63,17 @@ localStorage.setItem("studySessionCounter", studyHours);
 
 function updateSessionCounters() {
   animeSessions = parseInt(localStorage.getItem("animeSessions"), 10);
-  animeSessionCounter.textContent = animeSessions + " Anime Sessions";
+  animeSessionCounter.textContent = animeSessions + " Sesiones de Ánime";
   studySessions = parseInt(localStorage.getItem("studySessions"), 10);
-  studySessionCounter.textContent = studySessions + " Study Sessions";
+  studySessionCounter.textContent = studySessions + " Sesiones de Estudio";
   animeHours = parseInt(localStorage.getItem("animeSessionCounter"), 10);
   animeHoursCounter.textContent = `${Math.floor(animeHours / 60)}:${
     animeHours % 60
-  } Time of Anime`;
+  } de Ánime`;
   studyHours = parseInt(localStorage.getItem("studySessionCounter"), 10);
   studyHoursCounter.textContent = `${Math.floor(studyHours / 60)}:${
     studyHours % 60
-  } Time of Study`;
+  } de Estudio`;
 }
 updateSessionCounters();
 
@@ -123,16 +123,16 @@ const startCountdown = function (mins, secs) {
       if (watchingAnime) {
         // working time starts
         clearInterval(interval);
-        nextEventInfo.textContent = "Dont you dare click on next Episode!";
-        startButton.textContent = "START";
+        nextEventInfo.textContent = "No reproduzcas el próximo episodio!";
+        startButton.textContent = "COMENZAR";
         plus5.style.visibility = "hidden";
         finishButton.style.visibility = "hidden";
         timeMins = workTime;
         watchingAnime = false;
         paused = true;
         notify(
-          "Anime time has ended",
-          "Get back to work\nAND DONT YOU DARE CLICK ON NEXT EPISODE!"
+          "Se acabó el tiempo de ver Ánime",
+          "Sigue trabajando\nPERO NO REPRODUZCAS EL PRÓXIMO EPISODIO TODAVÍA!"
         );
         addAnimeSession();
         return;
@@ -140,13 +140,13 @@ const startCountdown = function (mins, secs) {
         // anime time starts
         clearInterval(interval);
         timeMins = animeTime;
-        nextEventInfo.textContent = "You can watch Anime now";
+        nextEventInfo.textContent = "Ahora ya puedes ver Ánime";
         plus5.style.visibility = "hidden";
         finishButton.style.visibility = "hidden";
-        startButton.textContent = "START";
+        startButton.textContent = "COMENZAR";
         watchingAnime = true;
         paused = true;
-        notify("You can take a break now", "Go watch that episode!\n");
+        notify("Ya puedes descansar", "Ve y mira el siguiente episodio!\n");
         addStudySession();
         return;
       }
@@ -184,9 +184,9 @@ const updateEventDetails = function (timestamp) {
   let mins = dateObj.getMinutes();
   mins = (mins < 10 ? "0" : "") + mins;
   if (watchingAnime) {
-    nextEventInfo.textContent = "Stop Anime at " + hours + ":" + mins;
+    nextEventInfo.textContent = "Parar Ánime a las " + hours + ":" + mins;
   } else {
-    nextEventInfo.textContent = "Next Episode at " + hours + ":" + mins;
+    nextEventInfo.textContent = "Siguiente episodio a las " + hours + ":" + mins;
   }
 };
 
@@ -195,15 +195,15 @@ function startClicked() {
     return "Sure you want to leave?";
   };
 
-  if(startButton.textContent==='RESTART'){
+  if(startButton.textContent==='REINIC1IAR'){
     paused = true;
-    startButton.textContent='START'
+    startButton.textContent='COMENZAR'
     resetButton.style.visibility = 'visible';
     startButton.style.visibility = "hidden";
   }else{
     paused = false;
     startButton.style.visibility = "visible";
-    startButton.textContent='RESET';
+    startButton.textContent='REINICIAR';
   }
 
   checkPerms();
@@ -278,6 +278,6 @@ checkPerms();
 function reset(){
   aftStart.style.display = 'none';
   beforeStart.style.display = 'inline';
-  startButton.textContent = 'START';
+  startButton.textContent = 'COMENZAR';
   resetButton.style.visibility = 'hidden';
 }
